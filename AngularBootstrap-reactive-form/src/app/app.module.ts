@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-//import { MatExpansionModule } from '@angular/material/expansion';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,6 +9,12 @@ import { NotifierModule, NotifierOptions } from 'angular-notifier';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngb-modal';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EmpFormComponent } from './components/emp-form/emp-form.component';
+import { EmpListComponent } from './components/emp-list/emp-list.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { UpdateEmpComponent } from './components/update-emp/update-emp.component';
+
+//import { MatExpansionModule } from '@angular/material/expansion';
 
 const customNotifierOptions: NotifierOptions = {
   position: {
@@ -55,7 +60,11 @@ const customNotifierOptions: NotifierOptions = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EmpFormComponent,
+    EmpListComponent,
+    NotFoundComponent,
+    UpdateEmpComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +72,7 @@ const customNotifierOptions: NotifierOptions = {
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    //MatExpansionModule,
+     //MatExpansionModule,
     BrowserAnimationsModule,
     NotifierModule.withConfig(customNotifierOptions),
     ModalModule,
