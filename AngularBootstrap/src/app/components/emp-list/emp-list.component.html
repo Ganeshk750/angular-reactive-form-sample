@@ -1,0 +1,31 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+       <th>Name</th>
+       <th>Email</th>
+       <th>DOB</th>
+       <th>Salary</th>
+       <th>Age</th>
+       <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees, let i = index;">
+        <td>{{i+1}}.{{emp.emp_name}}</td>
+        <td>{{emp.emp_email | lowercase}}</td>
+        <td>{{emp.emp_dob | date}}</td>
+        <td>{{emp.emp_salary | currency : 'INR'}}</td>
+        <td>{{emp.emp_age}}</td>
+        <div>
+            <button (click)="editEmp(emp)" class="btn btn-sm btn-primary mr-2">
+              Edit
+            </button>&nbsp;
+            <button (click)="deleteEmp(emp)" class="btn btn-sm btn-danger">
+              Delete
+            </button>
+          </div>
+      </tr>
+    </tbody>
+  </table>
+</div>
